@@ -9,7 +9,7 @@ You must supply at least 4 methods:
 import pickle
 import numpy as np   # We recommend to use numpy arrays
 from os.path import isfile
-from sklearn.tree import DecisionTreeRegressor
+from sklearn import datasets, linear_model
 class model:
     def __init__(self):
         '''
@@ -44,7 +44,7 @@ class model:
         print("FIT: dim(y)= [{:d}, {:d}]".format(num_train_samples, self.num_labels))
         if (self.num_train_samples != num_train_samples):
             print("ARRGH: number of samples in X and y do not match!")
-        self.clf = DecisionTreeRegressor()
+        self.clf = linear_model.LinearRegression()
         self.clf.fit(X, y)
         self.is_trained=True
 
